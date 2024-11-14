@@ -444,9 +444,8 @@
 #    summary = "*"
 #    script = dunst_espeak.sh
 
-#[script-test]
-#    summary = "*script*"
-#    script = dunst_test.sh
+[waybar]
+    script = $HOME/.config/dunst/waybar_signal.sh
 
 #[ignore]
 #    # This notification will not be displayed

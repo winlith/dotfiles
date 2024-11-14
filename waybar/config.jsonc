@@ -30,7 +30,8 @@
         "wireplumber",
         "bluetooth",
         "custom/weather",
-        "clock"
+        "clock",
+        "custom/notifications"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -193,5 +194,14 @@
             "suspend": "systemctl suspend",
             "logout": "hyprctl dispatch exit"
         }
+    },
+    "custom/notifications": {
+        "format": {},
+        "tooltip": true,
+        "interval": "once",
+        "signal": 1,
+        "on-click": "dunstctl history-clear",
+        "exec": "$HOME/.config/waybar/notifications",
+        "return-type": "json"
     }
 }

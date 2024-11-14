@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+const exec = require('child_process').exec;
+
+const outputObj = {}
+
+exec('dunstctl count history', (error, stdout, stderr) => {
+    let sum = Number.parseInt(stdout);
+    if (sum === 0) {
+        outputObj.text = "󰂚 ";
+        outputObj.tooltip = "No notifications";
+        console.log(JSON.stringify(outputObj));
+    } else {
+        outputObj.text = "󱅫 ";
+        outputObj.tooltip = "";
+        exec('dunstctl history', (error, stdout, stderr) => {
+            const history = JSON.parse(stdout);
+            for (notification of history.data[0]) {
+                outputObj.tooltip += `<span size='14pt'><b>${notification.appname.data}</b></span>\n<b>${notification.summary.data}</b>\n${notification.body.data}\n\n`;
+            }
+            console.log(JSON.stringify(outputObj));
+        });
+    }
+});
