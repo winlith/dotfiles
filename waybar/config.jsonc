@@ -149,6 +149,7 @@
     "mpris": {
         "interval": 1,
         "format": "{player_icon}  {artist} - {title}",
+        "max-length": 70,
         "player-icons": {
             "spotify": "󰓇",
             "default": "󰝚"
