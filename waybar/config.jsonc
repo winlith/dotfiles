@@ -181,7 +181,7 @@
         "format": "{}°C",
         "tooltip": true,
         "interval": 3600,
-        "exec": "wttrbar --location Białystok",
+        "exec": "wttrbar --location Bialystok",
         "return-type": "json"
     },
     "custom/power": {
