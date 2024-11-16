@@ -201,7 +201,7 @@
         "tooltip": true,
         "interval": "once",
         "signal": 1,
-        "on-click": "dunstctl history-clear",
+        "on-click": "dunstctl history-clear; pkill -RTMIN+1 waybar",
         "exec": "$HOME/.config/waybar/notifications",
         "return-type": "json"
     }
