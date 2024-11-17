@@ -16,7 +16,8 @@
         "cpu",
         "temperature",
         "custom/nvidia",
-        "memory",
+        "memory#ram",
+        "memory#swap",
         "disk#root",
         "disk#home",
         "network"
@@ -116,9 +117,15 @@
         "tooltip": true,
         "tooltip-format": "GPU"
     },
-    "memory": {
+    "memory#ram": {
         "interval": 1,
-        "format": "  {percentage:2}%"
+        "format": "  {percentage:2}%",
+        "tooltip-format": "{used:0.1f}/{total:0.1f} GiB"
+    },
+    "memory#swap": {
+        "interval": 1,
+        "format": "󰓡  {swapPercentage:2}%",
+        "tooltip-format": "{swapUsed:0.1f}/{swapTotal:0.1f} GiB"
     },
     "disk#root": {
         "path": "/",
