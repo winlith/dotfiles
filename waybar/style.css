@@ -137,3 +137,7 @@ menuitem:hover {
 #custom-notifications {
     padding-right: 6px;
 }
+
+#idle_inhibitor {
+    padding-right: 16px;
+}

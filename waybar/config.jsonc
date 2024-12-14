@@ -20,6 +20,7 @@
         "memory#swap",
         "disk#root",
         "disk#home",
+        "custom/updates",
         "network"
     ],
     "modules-center": [
@@ -28,6 +29,7 @@
     "modules-right": [
         "mpris",
         "tray",
+        "idle_inhibitor",
         "wireplumber",
         "bluetooth",
         "custom/weather",
@@ -137,6 +139,14 @@
         "format": "󰋜  {percentage_used:2}%",
         "tooltip-format": "home: {used}/{total}"
     },
+    "custom/updates": {
+        // "format": "{}°C",
+        "tooltip": false,
+        "interval": 3600,
+        "exec": "$HOME/.config/waybar/updates.sh",
+        "on-click": "kitty yay && pkill -RTMIN+2 waybar",
+        "signal": 2
+    },
     "network": {
         "interval": 1,
         "interface": "enp42s0",
@@ -200,7 +210,19 @@
             "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",
             "suspend": "systemctl suspend",
-            "logout": "hyprctl dispatch exit"
+            "logout": "uwsm stop",
+            // "shutdown": "$HOME/.config/waybar/power.sh shutdown",
+            // "reboot": "$HOME/.config/waybar/power.sh reboot",
+            // "suspend": "$HOME/.config/waybar/power.sh suspend",
+            // "logout": "$HOME/.config/waybar/power.sh logout",
+            "lock": "hyprlock"
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
         }
     },
     "custom/notifications": {
