@@ -1,0 +1,83 @@
+format = """
+[](fg:7)[   ](bg:7 fg:0)[](bg:8 fg:7)\
+$directory[](bg:4 fg:8)\
+$git_branch\
+$git_metrics\
+$git_status\
+[](fg:4) """
+
+right_format = """
+[](fg:0)$status[](bg:0 fg:8)\
+$nodejs\
+$dotnet\
+$zig\
+$custom\
+[](bg:8 fg:7)\
+$time[](fg:7)
+"""
+
+[directory]
+style = "fg:15 bg:8"
+format = "[ $path ]($style)"
+home_symbol = " "
+truncation_length = 3
+truncation_symbol = "…/"
+fish_style_pwd_dir_length = 3
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Projects" = " "
+
+[git_branch]
+truncation_length = 20
+symbol = ""
+style = "bold fg:0 bg:4"
+format = '[ $symbol $branch ]($style)'
+
+[git_metrics]
+added_style = "bold fg:#385f0d bg:4"
+deleted_style = "bold fg:#8c4351 bg:4"
+format = "([+$added ]($added_style))([-$deleted ]($deleted_style))"
+disabled = false
+
+[git_status]
+style = "fg:0 bg:4"
+format = '[($all_status$ahead_behind )]($style)'
+
+[nodejs]
+symbol = "󰎙 "
+style = "bg:8 fg:7"
+format = '[ $symbol $version ]($style)'
+
+[dotnet]
+symbol = "󰪮 "
+style = "bg:8 fg:7"
+format = '[ $symbol $version ]($style)'
+
+[zig]
+symbol = " "
+style = "bg:8 fg:7"
+format = '[ $symbol $version ]($style)'
+
+[custom.c]
+symbol = " "
+style = "bg:8 fg:7"
+format = '[ $symbol $output ]($style)'
+command = '$HOME/.config/starship/cc.sh'
+detect_extensions = ['c', 'cpp', 'h', 'hpp']
+shell = 'bash'
+
+[status]
+disabled = false
+style = "bg:0 fg:1"
+symbol = ""
+format = "[ $status ]($style)"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:0 bg:7"
+format = '[ $time   ]($style)'
