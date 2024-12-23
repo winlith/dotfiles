@@ -5,7 +5,7 @@ for dir in */; do
 done
 
 mv "$HOME/.zshrc" "$HOME/.zshrc.backup"
-ln -s "$PWD/.zshrc" "$HOME/.zshrc"
+ln -s "$PWD/zshrc" "$HOME/.zshrc"
 ln -s "$PWD/transient-prompt.zsh" "$HOME/.transient-prompt.zsh"
 
 echo 'Boom, done'
