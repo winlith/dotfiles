@@ -3,9 +3,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[3~" delete-char
+bindkey "^[[1;9D" beginning-of-line
+bindkey "^[[1;9C" end-of-line
+# bindkey "^[[3~" delete-char
 
 export EDITOR='nvim'
 export VISUAL='nvim'
