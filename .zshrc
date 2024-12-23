@@ -3,10 +3,16 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt SHARE_HISTORY
 
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3~" delete-char
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 
 alias spt="spotify_player"
+alias ls="ls --color"
+
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 #~/.scripts/pokemon.sh
