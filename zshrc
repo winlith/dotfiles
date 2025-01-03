@@ -22,12 +22,12 @@ export MANPAGER='nvim +Man!'
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-if [[ $TERM != linux ]]; then
+if [[ $TERM == linux ]]; then
+    PROMPT='%~$ '
+else
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     source ~/.transient-prompt.zsh
     export STARSHIP_CONFIG=~/.config/starship/starship.toml
     export STARSHIP_LOG=error
     eval "$(starship init zsh)"
-else
-    PROMPT='%~$ '
 fi
