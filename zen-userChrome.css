@@ -1,0 +1,29 @@
+/*better full full screen */
+:root:is([sizemode="fullscreen"]) {--zen-border-radius: 0px !important;}
+:root:is([sizemode="fullscreen"]) #navigator-toolbox,
+:root:is([sizemode="fullscreen"]) #zen-appcontent-navbar-container,
+:root:is([sizemode="fullscreen"]) hbox#browser splitter#zen-sidebar-splitter {
+display: none !important
+}
+
+:root:is([sizemode="fullscreen"]) #tabbrowser-tabbox {border-radius: 0px !important}
+
+:root:is([sizemode="fullscreen"]) {
+  &:not([zen-no-padding="true"]) #zen-tabbox-wrapper {
+    margin: 0px !important;
+  }
+}
+
+:root:is([sizemode="fullscreen"])  {
+  & #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer {
+    margin: 0px !important;
+  }
+}
+
+:root:is([sizemode="fullscreen"]) #zen-appcontent-wrapper {
+margin: 0px !important;
+}
+
+:root:is([sizemode="fullscreen"]) #zen-appcontent-wrapper {
+margin: 0px !important;
+}

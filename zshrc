@@ -10,6 +10,8 @@ bindkey "^[[3~" delete-char
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+alias ssh="kitten ssh"
+alias icat="kitten icat"
 alias spt="spotify_player"
 alias ls="ls --color"
 
