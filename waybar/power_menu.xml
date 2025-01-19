@@ -12,6 +12,11 @@
         </object>
     </child>
     <child>
+        <object class="GtkMenuItem" id="vm">
+            <property name="label">  Switch to Windows</property>
+        </object>
+    </child>
+    <child>
 		<object class="GtkMenuItem" id="suspend">
 			<property name="label">  Suspend</property>
         </object>

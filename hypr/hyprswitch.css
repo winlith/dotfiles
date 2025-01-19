@@ -85,5 +85,5 @@ window {
     font-family: monospace;
     border-radius: var(--border-radius);
     background-color: var(--bg-color);
-    border: 3px solid var(--index-border-color);
+    border: 0px;
 }

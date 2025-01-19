@@ -210,6 +210,7 @@
             "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",
             "suspend": "systemctl suspend",
+            "vm": "env LIBVIRT_DEFAULT_URI=qemu:///system /usr/bin/virsh start win11",
             "logout": "uwsm stop",
             // "shutdown": "$HOME/.config/waybar/power.sh shutdown",
             // "reboot": "$HOME/.config/waybar/power.sh reboot",
