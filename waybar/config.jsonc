@@ -15,7 +15,7 @@
         "custom/power",
         "cpu",
         "temperature",
-        "custom/nvidia",
+        "custom/amdgpu",
         "memory#ram",
         "memory#swap",
         "disk#root",
@@ -29,7 +29,7 @@
     "modules-right": [
         "mpris",
         "tray",
-        "idle_inhibitor",
+        // "idle_inhibitor",
         "wireplumber",
         "bluetooth",
         "custom/weather",
@@ -112,8 +112,15 @@
         "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
         "tooltip": false
     },
-    "custom/nvidia": {
-        "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% \\2°C/g; s/\\b[0-9]\\{1\\}\\b/ &/g'",
+    // "custom/nvidia": {
+    //     "exec": "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% \\2°C/g; s/\\b[0-9]\\{1\\}\\b/ &/g'",
+    //     "format": "󰢮  {}",
+    //     "interval": 1,
+    //     "tooltip": true,
+    //     "tooltip-format": "GPU"
+    // },
+    "custom/amdgpu": {
+        "exec": "/opt/rocm/bin/rocm-smi -u -t --csv | awk '/card0/{split($0,a,\",\"); split(a[3],b,\".\"); print a[5]\"% \"b[1]\"°C\"}'",
         "format": "󰢮  {}",
         "interval": 1,
         "tooltip": true,
@@ -210,7 +217,7 @@
             "shutdown": "systemctl poweroff",
             "reboot": "systemctl reboot",
             "suspend": "systemctl suspend",
-            "vm": "env LIBVIRT_DEFAULT_URI=qemu:///system /usr/bin/virsh start win11",
+            // "vm": "env LIBVIRT_DEFAULT_URI=qemu:///system /usr/bin/virsh start win11",
             "logout": "uwsm stop",
             // "shutdown": "$HOME/.config/waybar/power.sh shutdown",
             // "reboot": "$HOME/.config/waybar/power.sh reboot",
