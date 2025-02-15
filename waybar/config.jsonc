@@ -33,8 +33,8 @@
         "wireplumber",
         "bluetooth",
         "custom/weather",
-        "clock",
-        "custom/notifications"
+        "clock"
+        // "custom/notifications"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -109,7 +109,7 @@
     },
     "temperature": {
         "interval": 1,
-        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
+        "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon3/temp1_input",
         "tooltip": false
     },
     // "custom/nvidia": {
@@ -120,7 +120,7 @@
     //     "tooltip-format": "GPU"
     // },
     "custom/amdgpu": {
-        "exec": "/opt/rocm/bin/rocm-smi -u -t --csv | awk '/card0/{split($0,a,\",\"); split(a[3],b,\".\"); print a[5]\"% \"b[1]\"°C\"}'",
+        "exec": "/opt/rocm/bin/rocm-smi -u -t --csv | awk '/card0/{split($0,a,\",\"); split(a[3],b,\".\"); printf \"%2s%% %2s°C\\n\", a[5], b[1]}'",
         "format": "󰢮  {}",
         "interval": 1,
         "tooltip": true,
